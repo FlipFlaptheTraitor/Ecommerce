@@ -22,7 +22,7 @@
   
   
   ## Usage 
-  ![employee tracker](https://media.giphy.com/media/KoTMdYpkEDovqfqA83/giphy.gif)
+  ![employee tracker](insertgiflink)
     Full demonstration video can be found @
   ## Credits
   Credit to the creator of the original starter code @ https://github.com/coding-boot-camp/fantastic-umbrella 
