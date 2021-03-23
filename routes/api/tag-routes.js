@@ -9,21 +9,14 @@ router.get('/', (req, res) => {
   Tag.findAll({
     include: [
       {
-      model: Tag,
+      model: Product,
       attributes: [
-        'rock music',
-        'pop music',
-        'blue',
-        'red',
-        'green',
-        'white',
-        'gold',
-        'pop culture'
+        'product_name'
       ]
       }
     ]
   })
-  .then((dbTagData) => res.status(200).json(dbTagData))
+  .then((tagData) => res.status(200).json(tagData))
     .catch((err) => {
       console.log(err);
       res.status(404).json(err);
@@ -40,26 +33,16 @@ router.get('/:id', (req, res) => {
     
     include: [
       {
-        attributes: [
-       'rock music',
-        'pop music',
-        'blue',
-        'red',
-        'green',
-        'white',
-        'gold',
-        'pop culture'
-        ],
-        model: Tag,
+        model: Product,
       }
     ]
   })
-    .then(dbTagData => {
-      if (!dbTagData) {
+    .then(tagData => {
+      if (!tagData) {
         res.status(404).json({ message: 'No tag found' });
         return;
       }
-      res.json(dbTagData);
+      res.json(tagData);
     })
     .catch(err => {
       console.log(err);
@@ -73,27 +56,30 @@ router.post('/', (req, res) => {
     tag_name: req.body.tag_name,
     
   })
-    .then(dbTagData => res.json(dbTagData))
+    .then(tagData => res.json(tagData))
     .catch(err => {
       console.log(err);
       res.status(404).json(err);
-})
+});
 });
 
 router.put('/:id', (req, res) => {
   // update a tag's name by its `id` value
   Tag.update({
+      tag_name: req.body.tag_name
+    },
+    {
     where: {
       id: req.params.id
     }
   }
 )
-  .then(dbTagData => {
-    if (!dbTagData) {
+  .then(tagData => {
+    if (!tagData) {
       res.status(404).json({ message: 'No tag found' });
       return;
     }
-    res.json(dbTagData);
+    res.json(tagData);
   })
   .catch(err => {
     console.log(err);
@@ -109,12 +95,12 @@ router.delete('/:id', (req, res) => {
       id: req.params.id
     }
   })
-    .then(dbTagData => {
-      if (!dbTagData) {
+    .then(tagData => {
+      if (!tagData) {
         res.status(404).json({ message: 'No tag found' });
         return;
       }
-      res.json(dbTagData);
+      res.json(tagData);
     })
     .catch(err => {
       console.log(err);

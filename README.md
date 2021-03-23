@@ -1,7 +1,7 @@
 # E-commerce Back End Starter Code
 
   ## Description 
-
+This program is a mock up back end of a ecommerce website. this program uses express and sequelize along with msql to map out a database for a company that participates in ecommerce. The README features instalation instructions and a video of the useage of the program. This program has the ability to read create update and delete data from the database.
   
   
   ## Table of Contents
@@ -17,13 +17,18 @@
   * [Tests](#tests)
   
   ## Installation
-
-
+  Node and MySQL are required to run this program.
+After being cloned from the repository the user will need to run npm install in gitbash in the base directory of the program to make sure that the application will run properly.
+Also this program requires the following dependecies bcrypt, dotenv, express, mysql2, sequelize.
+A creation of a .env file featuring the following code with the user and pw replaced my the users mysql username and password
+DB_NAME='ecommerce_db'
+DB_USER=''
+DB_PW=''
   
   
   ## Usage 
-  ![employee tracker](insertgiflink)
-    Full demonstration video can be found @
+  ![employee tracker](https://media.giphy.com/media/VcAOZGmDVF5iYz96ki/giphy.gif)
+    Video of setting up Database with mysql, seeding the Database, and how to start the server and testing in insomnia https://drive.google.com/file/d/1FQxEpQEMeS1F4MDlvSAqWZstNmDr8MBg/view
   ## Credits
   Credit to the creator of the original starter code @ https://github.com/coding-boot-camp/fantastic-umbrella 
     original author can be found @ https://github.com/Xandromus
